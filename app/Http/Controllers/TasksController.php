@@ -51,6 +51,11 @@ class TasksController extends Controller
     public function store(Request $request)
     {
         //
+        $this->validate($request,[
+            'content'             => 'required|max:255',
+            'status'             => 'required|max:100',
+        ]);
+
         $task = new task;
         $task->content = $request->content;
         $task->status = $request->status;
