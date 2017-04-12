@@ -53,6 +53,7 @@ class TasksController extends Controller
         //
         $task = new task;
         $task->content = $request->content;
+        $task->status = $request->status;
         $task->save();
         
         return redirect('/');
@@ -102,6 +103,7 @@ class TasksController extends Controller
         //       
         $task = task::find($id);
         $task->content = $request->content;
+        $task->status = $request->status;
         $task->save();
         
         return redirect('/');
